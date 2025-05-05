@@ -6,11 +6,10 @@ function init() {
 
   const volSlider = document.querySelector('input[type="range"]');
   const volIcon = document.querySelector('#volume-controls img');
-  
-  
+  const audioElem = document.querySelector('audio');
 
   volSlider.addEventListener('input', function() {
-    const volVal = parseInt()(this.value());
+    const volVal = parseInt(this.value);
 
     if(volVal === 0){
       volIcon.src = 'assets/icons/volume-level-0.svg';
@@ -34,7 +33,6 @@ function init() {
 
 
   const buttonElem = document.querySelector('button');
-  const audioElem = document.querySelector('audio');
   const selectorElem = document.getElementById('horn-select');
   const imgElem = document.querySelector('header + img');
 
