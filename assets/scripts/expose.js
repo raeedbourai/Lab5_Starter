@@ -37,18 +37,30 @@ function init() {
   const audioElem = document.querySelector('audio');
   const selectorElem = document.getElementById('horn-select');
   const imgElem = document.querySelector('header + img');
+  const jsConfetti = new JSConfetti();
 
   selectorElem.addEventListener('input', function() {
     if (selectorElem.value == "air-horn") {
-      imgElem.alt = 'air horn';
+      imgElem.alt = 'air-horn';
       imgElem.src = 'assets/images/air-horn.svg';
       audioElem.src = 'assets/audio/air-horn.mp3';
+    }
+    else if (selectorElem.value == "car-horn") {
+      imgElem.alt = 'car-horn';
+      imgElem.src = 'assets/images/car-horn.svg';
+      audioElem.src = 'assets/audio/car-horn.mp3';
+    }
+    else if (selectorElem.value == "party-horn") {
+      imgElem.alt = 'party-horn';
+      imgElem.src = 'assets/images/party-horn.svg';
+      audioElem.src = 'assets/audio/party-horn.mp3';
     }
   })
 
 
 
   buttonElem.addEventListener('click', function() {
+    if (selectorElem.value == "party-horn") jsConfetti.addConfetti();
     audioElem.play();
   })
 }
